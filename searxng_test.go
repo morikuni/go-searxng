@@ -1,6 +1,7 @@
 package searxng
 
 import (
+	"context"
 	"encoding/json"
 	"fmt"
 	"os"
@@ -16,7 +17,7 @@ func TestClient_Search(t *testing.T) {
 	}
 
 	for _, c := range AllCategories {
-		output, err := client.Search(&SearchInput{
+		output, err := client.Search(context.Background(), &SearchInput{
 			Query:      "Tokyo",
 			Categories: []Category{c},
 		})

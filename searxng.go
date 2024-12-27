@@ -1,6 +1,7 @@
 package searxng
 
 import (
+	"context"
 	"encoding/json"
 	"fmt"
 	"net/http"
@@ -59,7 +60,7 @@ type SearchInput struct {
 	SafeSearch *SafeSearchLevel
 }
 
-func (c *Client) Search(input *SearchInput) (*SearchOutput, error) {
+func (c *Client) Search(ctx context.Context, input *SearchInput) (*SearchOutput, error) {
 	requestURL := *c.apiURL
 	params := url.Values{}
 	params.Set("q", input.Query)
@@ -84,7 +85,7 @@ func (c *Client) Search(input *SearchInput) (*SearchOutput, error) {
 	}
 	requestURL.RawQuery = params.Encode()
 
-	httpReq, err := http.NewRequest(http.MethodPost, requestURL.String(), nil)
+	httpReq, err := http.NewRequestWithContext(ctx, http.MethodPost, requestURL.String(), nil)
 	if err != nil {
 		return nil, wrapErrorf("creating search request: %w", err)
 	}
