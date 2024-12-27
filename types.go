@@ -211,12 +211,12 @@ type GeneralResult struct {
 	Content       string         `json:"content"`
 	Engine        SearchEngine   `json:"engine"`
 	Engines       []SearchEngine `json:"engines"`
-	ParsedUrl     []string       `json:"parsed_url"`
+	ParsedURL     []string       `json:"parsed_url"`
 	Positions     []int          `json:"positions"`
 	Score         float64        `json:"score"`
 	Template      string         `json:"template"`
 	Title         string         `json:"title"`
-	Url           string         `json:"url"`
+	URL           string         `json:"url"`
 	PublishedDate *string        `json:"publishedDate,omitempty"`
 	IframeSrc     *string        `json:"iframe_src,omitempty"`
 	Thumbnail     *string        `json:"thumbnail,omitempty"`
@@ -228,12 +228,12 @@ type ImageResult struct {
 	Category     Category       `json:"category"`
 	Engine       SearchEngine   `json:"engine"`
 	Engines      []SearchEngine `json:"engines"`
-	ParsedUrl    []string       `json:"parsed_url"`
+	ParsedURL    []string       `json:"parsed_url"`
 	Positions    []int          `json:"positions"`
 	Score        float64        `json:"score"`
 	Template     string         `json:"template"`
 	Title        string         `json:"title"`
-	Url          string         `json:"url"`
+	URL          string         `json:"url"`
 	ImgSrc       string         `json:"img_src"`
 	Source       *string        `json:"source,omitempty"`
 	ThumbnailSrc *string        `json:"thumbnail_src,omitempty"`
@@ -248,13 +248,13 @@ type VideoResult struct {
 	Content       string          `json:"content,omitempty"`
 	Engine        SearchEngine    `json:"engine"`
 	Engines       []SearchEngine  `json:"engines"`
-	ParsedUrl     []string        `json:"parsed_url"`
+	ParsedURL     []string        `json:"parsed_url"`
 	Positions     []int           `json:"positions"`
 	Score         float64         `json:"score"`
 	Template      string          `json:"template"`
 	Thumbnail     string          `json:"thumbnail"`
 	Title         string          `json:"title"`
-	Url           string          `json:"url"`
+	URL           string          `json:"url"`
 	IframeSrc     *string         `json:"iframe_src,omitempty"`
 	Length        *StringOrNumber `json:"length,omitempty"`
 	PublishedDate *string         `json:"publishedDate,omitempty"`
@@ -270,12 +270,12 @@ type NewsResult struct {
 	Content       string         `json:"content"`
 	Engine        SearchEngine   `json:"engine"`
 	Engines       []SearchEngine `json:"engines"`
-	ParsedUrl     []string       `json:"parsed_url"`
+	ParsedURL     []string       `json:"parsed_url"`
 	Positions     []int          `json:"positions"`
 	Score         float64        `json:"score"`
 	Template      string         `json:"template"`
 	Title         string         `json:"title"`
-	Url           string         `json:"url"`
+	URL           string         `json:"url"`
 	PublishedDate string         `json:"publishedDate"`
 	Thumbnail     string         `json:"thumbnail"`
 	Metadata      string         `json:"metadata"`
@@ -297,7 +297,7 @@ type MapResult struct {
 	Links         []LabeledURL    `json:"links,omitempty"`
 	Longitude     json.Number     `json:"longitude"`
 	OpenStreetMap OpenStreetMap   `json:"osm"`
-	ParsedUrl     []string        `json:"parsed_url"`
+	ParsedURL     []string        `json:"parsed_url"`
 	Positions     []int           `json:"positions"`
 	Score         float64         `json:"score"`
 	Template      string          `json:"template"`
@@ -305,7 +305,7 @@ type MapResult struct {
 	Title         string          `json:"title"`
 	Type          *string         `json:"type,omitempty"`
 	TypeIcon      any             `json:"type_icon"` // I could not determine the type because all data is null.
-	Url           string          `json:"url"`
+	URL           string          `json:"url"`
 }
 
 func (*MapResult) isSearchResult() {}
@@ -336,8 +336,8 @@ type KeyLabelValue struct {
 
 type LabeledURL struct {
 	Label    string `json:"label"`
-	Url      string `json:"url"`
-	UrlLabel string `json:"url_label"`
+	URL      string `json:"url"`
+	URLLabel string `json:"url_label"`
 }
 
 type OpenStreetMap struct {
@@ -351,13 +351,13 @@ type MusicResult struct {
 	Engine        SearchEngine   `json:"engine"`
 	Engines       []SearchEngine `json:"engines"`
 	IframeSrc     string         `json:"iframe_src"`
-	ParsedUrl     []string       `json:"parsed_url"`
+	ParsedURL     []string       `json:"parsed_url"`
 	Positions     []int          `json:"positions"`
 	Score         float64        `json:"score"`
 	Template      string         `json:"template"`
 	Thumbnail     string         `json:"thumbnail"`
 	Title         string         `json:"title"`
-	Url           string         `json:"url"`
+	URL           string         `json:"url"`
 	PublishedDate *string        `json:"publishedDate,omitempty"`
 	Length        *json.Number   `json:"length,omitempty"`
 	Author        *string        `json:"author,omitempty"`
@@ -370,13 +370,13 @@ type ITResult struct {
 	Content       *string        `json:"content,omitempty"`
 	Engine        SearchEngine   `json:"engine"`
 	Engines       []SearchEngine `json:"engines"`
-	ParsedUrl     []string       `json:"parsed_url"`
+	ParsedURL     []string       `json:"parsed_url"`
 	Positions     []int          `json:"positions"`
 	Score         float64        `json:"score"`
 	Template      string         `json:"template"`
 	Thumbnail     *string        `json:"thumbnail,omitempty"`
 	Title         string         `json:"title"`
-	Url           string         `json:"url"`
+	URL           string         `json:"url"`
 	PublishedDate *string        `json:"publishedDate,omitempty"`
 }
 
@@ -387,12 +387,12 @@ type ScienceResult struct {
 	Content       *string        `json:"content,omitempty"`
 	Engine        SearchEngine   `json:"engine"`
 	Engines       []SearchEngine `json:"engines"`
-	ParsedUrl     []string       `json:"parsed_url"`
+	ParsedURL     []string       `json:"parsed_url"`
 	Positions     []int          `json:"positions"`
 	Score         float64        `json:"score"`
 	Template      string         `json:"template"`
 	Title         string         `json:"title"`
-	Url           string         `json:"url"`
+	URL           string         `json:"url"`
 	PublishedDate *string        `json:"publishedDate,omitempty"`
 }
 
@@ -403,12 +403,12 @@ type FilesResult struct {
 	Content       *string        `json:"content,omitempty"`
 	Engine        SearchEngine   `json:"engine"`
 	Engines       []SearchEngine `json:"engines"`
-	ParsedUrl     []string       `json:"parsed_url"`
+	ParsedURL     []string       `json:"parsed_url"`
 	Positions     []int          `json:"positions"`
 	Score         float64        `json:"score"`
 	Template      string         `json:"template"`
 	Title         string         `json:"title"`
-	Url           string         `json:"url"`
+	URL           string         `json:"url"`
 	PublishedDate *string        `json:"publishedDate,omitempty"`
 	Metadata      *string        `json:"metadata,omitempty"`
 	Thumbnail     *string        `json:"thumbnail,omitempty"`
@@ -421,12 +421,12 @@ type SocialMediaResult struct {
 	Content       string         `json:"content"`
 	Engine        SearchEngine   `json:"engine"`
 	Engines       []SearchEngine `json:"engines"`
-	ParsedUrl     []string       `json:"parsed_url"`
+	ParsedURL     []string       `json:"parsed_url"`
 	Positions     []int          `json:"positions"`
 	Score         float64        `json:"score"`
 	Template      string         `json:"template"`
 	Title         string         `json:"title"`
-	Url           string         `json:"url"`
+	URL           string         `json:"url"`
 	PublishedDate *string        `json:"publishedDate,omitempty"`
 	Thumbnail     *string        `json:"thumbnail,omitempty"`
 }
