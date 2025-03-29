@@ -12,7 +12,11 @@ import (
 
 type Client struct {
 	apiURL     *url.URL
-	httpClient *http.Client
+	httpClient HTTPClient
+}
+
+type HTTPClient interface {
+	Do(req *http.Request) (*http.Response, error)
 }
 
 func wrapErrorf(format string, args ...any) error {
@@ -23,7 +27,7 @@ type ClientOption struct {
 	// URL is required, The URL of searxng API.
 	URL string
 	// HTTPClient is optional, The HTTP client to use.
-	HTTPClient *http.Client
+	HTTPClient HTTPClient
 }
 
 func NewClient(opt *ClientOption) (*Client, error) {
@@ -31,7 +35,7 @@ func NewClient(opt *ClientOption) (*Client, error) {
 	if err != nil {
 		return nil, wrapErrorf("bad url: %w", err)
 	}
-	httpClient := http.DefaultClient
+	var httpClient HTTPClient = http.DefaultClient
 	if opt.HTTPClient != nil {
 		httpClient = opt.HTTPClient
 	}
